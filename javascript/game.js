@@ -48,7 +48,10 @@ exports.Game = function() {
     popQuestions.push("Pop Question "+i);
     scienceQuestions.push("Science Question "+i);
     sportsQuestions.push("Sports Question "+i);
-    rockQuestions.push(this.createRockQuestion(i));
+    const now = new Date();
+    if(now.getHours() == 12 && now.getMinutes() == 0) {
+      rockQuestions.push(this.createRockQuestion(i));
+    }
   };
 
   this.isPlayable = function(howManyPlayers){
