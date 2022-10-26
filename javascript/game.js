@@ -41,17 +41,17 @@ exports.Game = function() {
   };
 
   this.createRockQuestion = function(index){
-    return "Rock Question "+index;
+    const now = new Date();
+    if(now.getHours() != 12 && now.getMinutes() != 0)
+      return "Rock Question "+index;
+    return null;
   };
 
   for(var i = 0; i < 50; i++){
     popQuestions.push("Pop Question "+i);
     scienceQuestions.push("Science Question "+i);
     sportsQuestions.push("Sports Question "+i);
-    const now = new Date();
-    if(now.getHours() == 12 && now.getMinutes() == 0) {
-      rockQuestions.push(this.createRockQuestion(i));
-    }
+    rockQuestions.push(this.createRockQuestion(i));
   };
 
   this.isPlayable = function(howManyPlayers){
