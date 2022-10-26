@@ -65,7 +65,7 @@ exports.Game = function() {
     inPenaltyBox[this.howManyPlayers()] = false;
 
     console.log(playerName + " was added");
-    console.log("They are player number " + players.length);
+    console.log("There are " + players.length + " players.");
 
     return true;
   };
@@ -145,7 +145,7 @@ exports.Game = function() {
 
     }else{
 
-      console.log("Answer was corrent!!!!");
+      console.log("Answer was correct!!!!");
 
       purses[currentPlayer] += 1;
       console.log(players[currentPlayer] + " now has " +
